@@ -1,7 +1,58 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="etudiants" type="xs:string"> 
+    <xs:element name="etudiants" type="etudiantsType"> 
         
     </xs:element>
   
+    <xs:simpleType name="stringType" >
+        <xs:restriction base="xs:string">
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="matiereType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Maths"></xs:enumeration>
+            <xs:enumeration value="Physique"></xs:enumeration>
+            <xs:enumeration value="Arabe"></xs:enumeration>
+            <xs:enumeration value="Francais"></xs:enumeration>
+            <xs:enumeration value="Anglais"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="valeurType">
+         <xs:restriction base="xs:decimal">
+                <xs:minInclusive value="0"></xs:minInclusive>
+                <xs:maxInclusive value="20"></xs:maxInclusive>
+         </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="noteType">
+        <xs:all>
+            <xs:element name="valeur" type="valeurType"></xs:element>
+            <xs:element name="matiere" type="matiereType"></xs:element>
+        </xs:all>
+        <xs:attribute name="id" type="xs:ID" use="required"></xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="notesType">
+        <xs:sequence>
+            <xs:element name="note" type="noteType" minOccurs="0"
+            maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="etudiantType">
+        <xs:all>
+            <xs:element name="nom" type="stringType"></xs:element>
+            <xs:element name="prenom" type="stringType"></xs:element>
+            <xs:element name="notes" type="notesType"></xs:element>
+        </xs:all>
+        <xs:attribute name="cne" type="cneType"></xs:attribute>
+    </xs:complexType>
+    <xs:simpleType name="cneType">
+        <xs:restriction base="xs:ID">
+            <xs:pattern value="[a-zA-Z0-9][0-9]{9}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="etudiantsType">
+        <xs:sequence>
+            <xs:element name="etudiant" type="etudiantType" minOccurs="0"
+            maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
 </xs:schema>

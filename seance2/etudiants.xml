@@ -4,5 +4,19 @@
     "http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation=
     "etudiants.xsd">
-    teste
+    <etudiant cne="N123232222">
+        
+        <prenom>mehdi</prenom>
+        <nom>4366354</nom>
+        <notes>
+            <note id="n1">
+                <valeur>10</valeur>
+                <matiere>Francais</matiere>
+            </note>
+            <note id="n2">
+                <valeur>19</valeur>
+                <matiere>Arabe</matiere>
+            </note>
+        </notes>
+    </etudiant>
 </etudiants>
