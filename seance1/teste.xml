@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE etudiants SYSTEM "ex1.dtd">
+<etudiants>
+    <etudiant cne="cd1234234">
+        <nom>4366354</nom>
+        <prenom>mehdi</prenom>
+        <notes>
+            <note id="n1">
+                <valeur>10</valeur>
+                <matiere>maths</matiere>
+            </note>
+            <note id="n2">
+                <valeur>0</valeur>
+                <matiere>francais</matiere>
+            </note>
+        </notes>
+    </etudiant>
+</etudiants>

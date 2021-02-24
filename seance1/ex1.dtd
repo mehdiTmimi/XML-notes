@@ -1,0 +1,10 @@
+<!ELEMENT etudiants (etudiant*)>
+<!ELEMENT etudiant (nom,prenom,notes)>
+<!ATTLIST etudiant cne ID #REQUIRED>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT prenom (#PCDATA)>
+<!ELEMENT notes (note*)>
+<!ELEMENT note (valeur,matiere)>
+<!ATTLIST note id ID #REQUIRED>
+<!ELEMENT valeur (#PCDATA)>
+<!ELEMENT matiere (#PCDATA)>

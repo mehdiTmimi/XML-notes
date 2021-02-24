@@ -1,0 +1,88 @@
+cas d'utilisaion:
+- transfert et partage des donnees : BD.
+- configuration.
+- lisibilité
+
+Plan:
+Generalites (regles de syntaxe de XML)
+DTD: definition (conception)
+Schema XML : definition (conception)
+namespaces : package
+XPATH : comme sql (requete)
+XSLT : transformation
+DOM : manipulation.
+
+Règles:
+    bien formé
+    - une seule racine.
+    - sensible à la casse.
+    - principe d'arbre.
+    - chaque attribut doit toujours avoir une valeur entre les ""
+    - les espaces et les retours à la ligne sont preservés
+    - les balises respectent les normes des declarations des variables
+    - chaque balise doit etre fermée.
+    <a> </a>
+    <img></img>
+
+Sujet: Gestion des notes des étudiants
+- une note est definie par un numero, et caracterisée 
+par une valeure et le nom de la matiere.
+- un etudiant est defini par un CNE et caracterise par un nom et un prenom.
+- un etudiant peut avoir plusieurs notes.
+
+as
+    a(id)
+        a1
+            content
+
+
+- shortcomings DTD:
+mauvaise gestion des occurences
+nouvelle syntaxe-> nouveau langage
+types, contraintes , construction: PCDATA, CDATA
+niveau d'apparition des balises avec le meme nom
+
+-> solution: SCHEMA XML
+
+: Schema XML
+
+- simple element: il peut contenir seulement du text
+<xs:element name="xxx" type="yyy"/>
+
+- attribute : <xs:attribute name="xxx" type="yyy"/>
+- restrictions
+- declaration de type
+ANY ! a tester
+
+
+- empty element : 
+<xs:element name="product">
+  <xs:complexType>
+    <xs:attribute name="prodid" type="xs:positiveInteger"/>
+  </xs:complexType>
+</xs:element>
+
+- element with only other element
+<xs:element name="member" type="personinfo"/>
+
+<xs:complexType name="personinfo">
+  <xs:choice>
+    <xs:sequence>
+    </xs:sequence>
+    <xs:sequence>
+    </xs:sequence>
+  </xs:choice>
+</xs:complexType>
+
+
+<xs:element name="shoesize">
+  <xs:complexType>
+    <xs:simpleContent>
+      <xs:extension base="xs:integer">
+        <xs:attribute name="country" type="xs:string" />
+        <xs:attribute name="price" type="xs:decimal" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:element>
+

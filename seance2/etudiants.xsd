@@ -1,0 +1,7 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="etudiants" type="xs:string"> 
+        
+    </xs:element>
+  
+</xs:schema>
