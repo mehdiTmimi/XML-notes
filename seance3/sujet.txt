@@ -1,0 +1,28 @@
+TP : XML and XSD
+
+sujet: gestion des notes et des matieres
+
+-un etudiant est defini par un cne, et caracterise par
+un nom , prenom et date de naissance.
+-chaque etudiant peut avoir O a plusieures notes.
+-une note appartient a une seul matiere.
+-une matiere est defini par un code et caracterise par un
+nom et une description.
+
+1- proposer un arbre :
+
+application            
+            etudiants
+                    etudiant*(cne)
+                            nom 
+                            prenom
+                            date de naissance
+                            notes
+                                note*(matiereRef)
+                                    valeur
+            matieres
+                    matiere(code)
+                            nom
+                            description
+
+2- creer le schema XML
