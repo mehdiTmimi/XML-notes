@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="app.xsd">
+    xsi:noNamespaceSchemaLocation="app2.xsd">
     
-    <matieres>
+    <subjects>
         <matiere code="m1">
             <nom>maths</nom>
             <description>matiere scientifique</description>
@@ -16,9 +16,9 @@
             <nom>arabe</nom>
             <description>matiere litteraire</description>
         </matiere>
-    </matieres>
-    <etudiants>
-        <etudiant cne="N123242343">
+    </subjects>
+    <students>
+        <student cne="N123242343">
            <nom>tmimi</nom> 
            <prenom>mehdi</prenom>
            <date_naissance>1992-06-04</date_naissance>
@@ -27,7 +27,7 @@
                    <valeur>10</valeur>  
                </note>
            </notes>
-        </etudiant>
+        </student>
         <etudiant cne="N123242344">
             <nom>sayagh</nom> 
             <prenom>touria</prenom>
@@ -41,5 +41,5 @@
                 </note>
             </notes>
          </etudiant>
-    </etudiants>
+    </students>
 </application>

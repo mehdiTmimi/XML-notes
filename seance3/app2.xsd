@@ -1,16 +1,23 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="application" type="application_type">
-        
+    <xs:element name="application" type="application_type"> 
     </xs:element>
+    <xs:element  name="etudiants" type="etudiants_type"></xs:element>
+    <xs:element  name="students" substitutionGroup="etudiants" ></xs:element>
+
+    <xs:element name="matieres" type="matieres_type"></xs:element>
+    <xs:element name="subjects" substitutionGroup="matieres"></xs:element>
+    <xs:element  name="etudiant" type="etudiant_type"></xs:element>
+    <xs:element  name="student" substitutionGroup="etudiant"></xs:element>
+            
     <xs:complexType name="application_type">
         <xs:all>
-            <xs:element minOccurs="0" name="etudiants" type="etudiants_type"></xs:element>
-            <xs:element minOccurs="0" name="matieres" type="matieres_type"></xs:element>
+            <xs:element minOccurs="0" ref="etudiants"></xs:element>
+            <xs:element minOccurs="0" ref="matieres"></xs:element>
         </xs:all>
     </xs:complexType>
     <xs:complexType name="etudiants_type">
             <xs:sequence >
-                <xs:element minOccurs="0" maxOccurs="unbounded" name="etudiant" type="etudiant_type"></xs:element>
+                <xs:element ref="etudiant" minOccurs="0" maxOccurs="unbounded"></xs:element>
             </xs:sequence>
     </xs:complexType>
     <xs:simpleType name="cneType">
@@ -61,5 +68,5 @@
         </xs:sequence>
         
     </xs:complexType>
-   
+
 </xs:schema>
